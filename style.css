@@ -24,7 +24,7 @@ body {
   height: 10vh;
 }
 
-.container, .convertor, .temperature-box, .label-box {
+.container, .convertor, .temperature-box, .label-box{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,7 +37,7 @@ body {
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  filter: drop-shadow(-1px 5px 5px rgba(142, 149, 32, 0.6));
+  filter: drop-shadow(-1px 5px 5px rgba(28, 29, 24, 0.6));
 }
 
 .container {
@@ -53,6 +53,12 @@ body {
 
 .temperature-box {
   height: 100px;
+}
+
+.error-msg {
+  display: none;
+  color: #ad4a22;
+  font-size: 15px;
 }
 
 .label-box {
@@ -85,9 +91,13 @@ input[type='number']::-webkit-inner-spin-button {
   min-height: 50px;
   max-width: 150px;
   padding: 0 5px 0 5px;
-  border: none;
+  border: 0px;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
+}
+
+input[type='number'].error {
+  border: 2px solid #ad4a22;
 }
 
 input[type='number']:focus {
@@ -96,7 +106,7 @@ input[type='number']:focus {
   text-shadow: 0px 0px 0px #111213;
 }
 
-.farenheit input[type='number']:focus {
+input[type='number']:focus.farenheit {
   border: 2px solid #c9ac2f;
 }
 
@@ -109,19 +119,24 @@ input[type='number']:focus {
   bottom: 33%;
   left: 50%;
   transform: translate(-50%, -50%);
+  filter: drop-shadow(-1px 5px 5px rgba(16, 17, 15, 0.6));
 }
 
 .convert-btn {
   outline: none;
   cursor: pointer;
-  height: 75px;
-  width: 105px;
+  height: 65px;
+  width: 95px;
   border: transparent;
-  background: linear-gradient(to top right, #e9cd53, #c9ac2f);
-  color: #000;
+  background: #2c2d36;
+  color: #fff;
   font-family: 'Poppins', sans-serif;
-  font-weight: 500;
+  font-weight: 700;
   clip-path: circle(50% at 50% 50%);
+}
+
+.convert-btn:hover {
+  transform: scale(1.05);
 }
 
 .background-top {
